@@ -1,0 +1,15 @@
+[package]
+name = "Aggregator examples"
+version = "0.0.0"
+
+[addresses]
+aggregator_examples = "0xCAFE"
+
+#[dependencies]
+#AptosStdlib = { local = "../../framework/aptos-stdlib" }
+#AptosFramework = { local = "../../framework/aptos-framework" }
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
