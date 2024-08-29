@@ -1,0 +1,27 @@
+#[package]
+#name = "BCSStream"
+#version = "0.0.0"
+#
+#[addresses]
+#bcs_stream = "0xCAFE"
+#
+#[dependencies]
+#AptosStdlib = { local = "../../framework/aptos-stdlib" }
+#
+
+[package]
+name = "BCSStream"
+version = "0.0.0"
+
+[addresses]
+bcs_stream = "5dcb60faa729186d2bf13e21241e5edd0222c69ccb4973324511c21ee19a3626"
+
+#[dependencies.AptosFramework]
+#git = "https://github.com/aptos-labs/aptos-core.git"
+#rev = "mainnet"
+#subdir = "aptos-move/framework/aptos-stdlib"
+
+[dependencies.AptosStdlib]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-stdlib"

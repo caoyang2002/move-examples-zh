@@ -1,0 +1,39 @@
+[package]
+name = "bonding_curve_launchpad"
+version = "1.0.0"
+authors = []
+upgrade_policy = "compatible"
+#
+#[addresses]
+#bonding_curve_launchpad = "_"
+#deployer = "_"
+#swap = "_"
+#
+#[dev-addresses]
+#bonding_curve_launchpad = "0x650"
+#deployer = "0xaaa"
+#swap = "0xcafe"
+#
+#
+#[dependencies.AptosFramework]
+#git = "https://github.com/aptos-labs/aptos-core.git"
+#rev = "bbf569abd260d94bc30fe96da297d2aecb193644"
+#subdir = "aptos-move/framework/aptos-framework"
+#
+#[dependencies.swap]
+#git = "https://github.com/aptos-labs/aptos-core.git"
+#rev = "bbf569abd260d94bc30fe96da297d2aecb193644"
+#subdir = "aptos-move/move-examples/swap"
+
+
+[addresses]
+bcs_stream = "5dcb60faa729186d2bf13e21241e5edd0222c69ccb4973324511c21ee19a3626"
+
+#bonding_curve_launchpad = "_"
+#deployer = "_"
+#swap = "_"
+
+[dependencies.AptosStdlib]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-stdlib"

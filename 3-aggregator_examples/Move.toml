@@ -3,11 +3,7 @@ name = "Aggregator examples"
 version = "0.0.0"
 
 [addresses]
-aggregator_examples = "0xCAFE"
-
-#[dependencies]
-#AptosStdlib = { local = "../../framework/aptos-stdlib" }
-#AptosFramework = { local = "../../framework/aptos-framework" }
+aggregator_examples = "5dcb60faa729186d2bf13e21241e5edd0222c69ccb4973324511c21ee19a3626"
 
 [dependencies.AptosFramework]
 git = "https://github.com/aptos-labs/aptos-core.git"
