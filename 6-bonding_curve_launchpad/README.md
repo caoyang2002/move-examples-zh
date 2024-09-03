@@ -1,4 +1,4 @@
-# 绑定曲线启动平台
+# 绑定曲线启动平台（Bonding Curve Launchpad）
 
 ## 概述
 
@@ -6,7 +6,7 @@
 
 创建新的 FA 后，最初它只能在启动平台上进行交易。可调度的 FA 功能用于支持对外部转账的全球冻结令牌。FA 的创建者不能预铸以获得对后续参与者的优势。此外，虚拟流动性的使用防止了典型的早期参与者的压倒性优势。
 
-一旦在流动性对中达到 APT 阈值，储备金将转移到公共 DEX，称为“毕业”。从那里，全球冻结被禁用，允许所有参与者自由使用他们的代币。
+一旦在流动性对中达到 APT 阈值，储备金将转移到公共 DEX，称为“毕业（Graduation）”。从那里，全球冻结被禁用，允许所有参与者自由使用他们的代币。
 
 ### 关键术语
 
@@ -106,7 +106,7 @@
    3. 为了防止 `bonding_curve_launchpad` 所有者的任何不当行为，在第三方 DEX 上创建新流动性对期间收到的任何流动性代币将被发送到一个无效地址。否则，这些代币可能随时被用于抽干流动性。
 ## 如何测试：
 
-```console
+```bash
 aptos move test --dev
 ```
 
@@ -129,7 +129,7 @@ aptos move test --dev
 
 将 `bonding_curve_launchpad` 部署到测试网，并参考已部署的 `swap` 智能合约：
 
-```console
+```bash
 aptos move publish --profile testnet_bonding_curve_launchpad \
 --named-addresses bonding_curve_launchpad={REPLACE_WITH_YOUR_ACCOUNT},swap=0xe26bbe169db47aaa32349d253891af42134e1f6b64fef63f60105ec9ab6b240f,deployer=0x4d51c99abff19bfb5ca3065f1e71dfc066c38e334def24dbac2b2a38bee8b946
 ```

@@ -3,7 +3,7 @@ name = "cli_e2e_tests"
 version = "0.0.1"
 
 [addresses]
-addr = "_"
+addr = "c0e3685f993b18c4f6c1a4bdf7ed91144a58b225938486198ea1e80b740119b2"
 
 [dev-addresses]
 addr = "0x12345"

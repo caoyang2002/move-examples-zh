@@ -1,4 +1,84 @@
-# 数据结构
+# 概述
+
+这段代码是一个基于双向链表实现的可迭代表（Iterable Table）模块，用于管理键值对数据结构的操作。
+
+# 快速开始
+
+## 使用私钥创建账户
+
+```bash
+aptos init --network testnet --private-key 0xyour...private...key
+```
+
+## 测试
+
+```bash
+aptos move test
+```
+
+# 详解
+
+这段代码是一个基于双向链表实现的可迭代表（Iterable Table）模块，用于管理键值对数据结构的操作。让我们逐步解释每个部分的功能和设计：
+
+## 模块声明和依赖
+
+```move
+module aptos_std::iterable_table {
+    use std::option::{Self, Option};  // 使用标准库中的 Option 类型
+    use aptos_std::table_with_length::{Self, TableWithLength};  // 使用 TableWithLength 模块
+}
+```
+
+- `aptos_std::iterable_table` 是这个模块的命名空间。
+- `std::option::Option` 是用来处理可能为空的值的标准库类型。
+- `aptos_std::table_with_length::TableWithLength` 是一个具有长度信息的表格类型，这个模块似乎建立在它的基础上。
+
+## 数据结构定义
+
+```move
+struct IterableValue<K: copy + store + drop, V: store> has store {
+    val: V,
+    prev: Option<K>,
+    next: Option<K>,
+}
+```
+
+- `IterableValue` 结构体用于包装存储在表中的值 `val`，同时记录前驱 `prev` 和后继 `next` 的键（Key）。这样的设计是为了支持双向链表的操作。
+
+```move
+struct IterableTable<K: copy + store + drop, V: store> has store {
+    inner: TableWithLength<K, IterableValue<K, V>>,
+    head: Option<K>,
+    tail: Option<K>,
+}
+```
+
+- `IterableTable` 结构体实现了一个可迭代表，内部包含了一个 `TableWithLength` 实例 `inner`，用于存储 `K` 类型的键和 `IterableValue<K, V>` 类型的值。
+- `head` 和 `tail` 分别指向表头和表尾的键，支持快速迭代和插入操作。
+
+## 表操作函数
+
+接下来是一系列操作函数，用于对 `IterableTable` 进行常见的增删改查操作，以及支持迭代器的操作：
+
+- `new`: 创建一个空的 `IterableTable` 实例。
+- `destroy_empty`: 销毁一个空的表格实例。
+- `add`: 向表格中添加新的条目，如果键已存在则中止操作。
+- `remove`: 从表格中移除指定键的条目，并返回其对应的值。
+- `borrow` 和 `borrow_mut`: 获取指定键的值的不可变和可变引用。
+- `length` 和 `empty`: 返回表格的长度和是否为空。
+- `contains`: 判断表格是否包含指定的键。
+
+## 迭代器操作函数
+
+- `head_key` 和 `tail_key`: 返回表格的头部和尾部键，用于迭代操作。
+- `borrow_iter` 和 `borrow_iter_mut`: 获取指定键对应的 `IterableValue` 的不可变和可变引用，包括其值和前驱后继键。
+- `remove_iter`: 移除指定键对应的条目，并返回其值和前驱后继键。
+
+## 测试函数
+
+最后，代码还包括一个测试函数 `iterable_table_test`，用于验证 `IterableTable` 模块的功能和正确性。
+
+## 数据结构
 
 可迭代的包装器围绕值，如果存在，指向前一个和下一个键。
 
