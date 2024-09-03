@@ -1,0 +1,13 @@
+[package]
+name = "CliArgs"
+version = "0.1.0"
+upgrade_policy = "compatible"
+
+[addresses]
+test_account = "5dcb60faa729186d2bf13e21241e5edd0222c69ccb4973324511c21ee19a3626"
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+
