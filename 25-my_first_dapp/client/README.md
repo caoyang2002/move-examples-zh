@@ -1,3 +1,12 @@
+# 快速开始
+
+```bash
+npm start
+```
+
+# 解析
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

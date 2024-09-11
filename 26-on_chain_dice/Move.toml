@@ -3,7 +3,9 @@ name = "OnChainDice"
 version = "0.0.0"
 
 [addresses]
-module_owner = "_"
+module_owner = "0xc0e3685f993b18c4f6c1a4bdf7ed91144a58b225938486198ea1e80b740119b2"
 
-[dependencies]
-AptosFramework = { local = "../../framework/aptos-framework" }
+[dependencies.AptosFramework]
+git = 'https://github.com/aptos-labs/aptos-core.git'
+rev = 'main'
+subdir = 'aptos-move/framework/aptos-framework'

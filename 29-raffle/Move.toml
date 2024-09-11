@@ -2,9 +2,15 @@
 name = "raffle"
 version = "0.0.1"
 
-[dependencies]
-AptosFramework = { local = "../../framework/aptos-framework" }
-AptosStdlib = { local = "../../framework/aptos-stdlib" }
+[dependencies.AptosFramework]
+git = 'https://github.com/aptos-labs/aptos-core.git'
+rev = 'main'
+subdir = 'aptos-move/framework/aptos-framework'
+
+[dependencies.AptosStdlib]
+git = 'https://github.com/aptos-labs/aptos-core.git'
+rev = 'main'
+subdir = 'aptos-move/framework/aptos-stdlib'
 
 [addresses]
-raffle = "_"
+raffle = "0xc0e3685f993b18c4f6c1a4bdf7ed91144a58b225938486198ea1e80b740119b2"

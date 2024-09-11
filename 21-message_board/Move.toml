@@ -2,9 +2,11 @@
 name = "MessageBoard"
 version = "0.0.1"
 
-[dependencies]
-AptosFramework = { local = "../../framework/aptos-framework" }
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
 
 [addresses]
 std = "0x1"
-message_board = "_"
+message_board = "0xc0e3685f993b18c4f6c1a4bdf7ed91144a58b225938486198ea1e80b740119b2"

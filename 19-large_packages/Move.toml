@@ -3,8 +3,11 @@ name = "LargePackages"
 version = "1.0.0"
 upgrade_policy = "compatible"
 
-[dependencies]
-AptosFramework = { local = "../../framework/aptos-framework" }
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+
 
 [addresses]
-large_packages = "_"
+large_packages = "0xc0e3685f993b18c4f6c1a4bdf7ed91144a58b225938486198ea1e80b740119b2"

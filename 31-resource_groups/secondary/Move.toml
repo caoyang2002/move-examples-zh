@@ -3,9 +3,13 @@ name = "ResourceGroupsSecondary"
 version = "0.0.0"
 
 [addresses]
-resource_groups_primary = "_"
-resource_groups_secondary = "_"
+resource_groups_primary = "0x42"
+resource_groups_secondary = "0x43"
 
-[dependencies]
-AptosFramework = { local = "../../../framework/aptos-framework" }
-ResourceGroupsPrimary = { local = "../primary" }
+[dependencies.AptosFramework]
+git = 'https://github.com/aptos-labs/aptos-core.git'
+rev = 'main'
+subdir = 'aptos-move/framework/aptos-framework'
+
+[dependencies.ResourceGroupsPrimary]
+local = "../primary"

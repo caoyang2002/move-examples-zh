@@ -3,9 +3,19 @@ name = "Marketplace"
 version = "0.0.0"
 
 [addresses]
-marketplace = "_"
+marketplace = "0xc0e3685f993b18c4f6c1a4bdf7ed91144a58b225938486198ea1e80b740119b2"
 
-[dependencies]
-AptosFramework = { local = "../../framework/aptos-framework" }
-AptosToken = { local = "../../framework/aptos-token" }
-AptosTokenObjects = { local = "../../framework/aptos-token-objects" }
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dependencies.AptosToken]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-token"
+
+[dependencies.AptosTokenObjects]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-token-objects"

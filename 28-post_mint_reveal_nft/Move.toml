@@ -2,10 +2,16 @@
 name = "PostMint"
 version = "0.0.0"
 
-[dependencies]
-AptosFramework = { local = "../../framework/aptos-framework" }
-AptosToken = { local = "../../framework/aptos-token" }
+[dependencies.AptosFramework]
+git = 'https://github.com/aptos-labs/aptos-core.git'
+rev = 'main'
+subdir = 'aptos-move/framework/aptos-framework'
+
+[dependencies.AptosToken]
+git = 'https://github.com/aptos-labs/aptos-core.git'
+rev = 'main'
+subdir = 'aptos-move/framework/aptos-token'
 
 [addresses]
 aptos_framework = "0x1"
-post_mint_reveal_nft = "_"
+post_mint_reveal_nft = "0xc0e3685f993b18c4f6c1a4bdf7ed91144a58b225938486198ea1e80b740119b2"
