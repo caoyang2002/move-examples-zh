@@ -20,3 +20,5 @@ Cargo.lock
 .idea
 
 build
+
+.DS_Store
