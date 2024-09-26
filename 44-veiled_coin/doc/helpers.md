@@ -1,4 +1,65 @@
+<a name="0x1337_helpers"></a>
 
+# 模块 `0x1337::helpers`
+
+- [常量](#@Constants_0)
+- [函数 `cut_vector`](#0x1337_helpers_cut_vector)
+- [函数 `get_veiled_balance_zero_ciphertext`](#0x1337_helpers_get_veiled_balance_zero_ciphertext)
+- [函数 `public_amount_to_veiled_balance`](#0x1337_helpers_public_amount_to_veiled_balance)
+
+```rust
+use 0x1::error;
+use 0x1::ristretto255;
+use 0x1::ristretto255_elgamal;
+use 0x1::vector;
+```
+
+<a name="@Constants_0"></a>
+
+## 常量
+
+<a name="0x1337_helpers_EVECTOR_CUT_TOO_LARGE"></a>
+
+通过 `cut_vector` 尝试剪切出比向量中更多的元素。
+
+```rust
+const EVECTOR_CUT_TOO_LARGE: u64 = 1;
+```
+
+<a name="0x1337_helpers_cut_vector"></a>
+
+## 函数 `cut_vector`
+
+给定一个向量 `vec`，移除 `vec` 的最后 `cut_len` 个元素，并按顺序返回它们。（这个函数存在是因为我们不喜欢 `std::vector::trim` 的接口。）
+
+```rust
+public fun <T> cut_vector<T>(vec: &mut vector<T>, cut_len: u64): vector<T>
+```
+
+<a name="0x1337_helpers_get_veiled_balance_zero_ciphertext"></a>
+
+## 函数 `get_veiled_balance_zero_ciphertext`
+
+返回一个零的加密，没有任何随机性（即，$r=0$），在任何 ElGamal 公钥下。
+
+```rust
+public fun get_veiled_balance_zero_ciphertext(): ristretto255_elgamal::CompressedCiphertext
+```
+
+<a name="0x1337_helpers_public_amount_to_veiled_balance"></a>
+
+## 函数 `public_amount_to_veiled_balance`
+
+返回一个 `amount` 的加密，没有任何随机性（即，$r=0$），在任何 ElGamal 公钥下。
+警告：这不是一个合适的密文：值 `amount` 可以很容易地被暴力破解。
+
+```rust
+public fun public_amount_to_veiled_balance(amount: u32): ristretto255_elgamal::Ciphertext
+```
+
+
+
+---
 <a name="0x1337_helpers"></a>
 
 # Module `0x1337::helpers`

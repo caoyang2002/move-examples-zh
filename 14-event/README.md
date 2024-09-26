@@ -2,6 +2,57 @@
 
 在 Move 语言中使用事件模块来定义、发出和验证事件
 
+
+
+## 什么是事件？
+
+事件为 Move 智能合约提供了一种日志记录机制。
+
+在执行交易期间会发出事件。每个 Move 模块可以定义自己的事件，并选择何时发出这些事件。
+何时使用事件？
+
+当区块链数据发生变化并且你需要历史跟踪时，使用事件。例如：跟踪你的 Aptogotchi 名称变更的历史。
+
+[Aptogotchi 示例源代码](https://github.com/aptos-labs/aptogotchi/blob/main/move/sources/aptogotchi.move)
+
+1. 从 aptos_framework 导入事件。
+
+```rust
+use aptos_framework::event;
+```
+
+2. 定义你的事件结构体。
+
+```rust
+// 事件的关联数据
+// 一般原则是包括所有必要的数据
+// 以理解交易执行前后底层资源的变化
+// （该交易改变了数据并发出了事件）。
+#[event]
+struct MintAptogotchiEvent has drop, store {
+    token_name: String,
+    aptogotchi_name: String,
+    parts: AptogotchiParts,
+}
+```
+
+3. 发出事件。
+
+```rust
+event::emit::<MintAptogotchiEvent>(
+    MintAptogotchiEvent {
+        token_name,
+        aptogotchi_name: name,
+        parts,
+    },
+);
+```
+
+4. 一旦你的智能合约部署并且上述代码执行，你可以在 Explorer 中检查发出这些事件的交易中的事件。就像这里的这个。
+
+更多资源
+
+
 # 快速开始
 
 ## 使用私钥创建账户

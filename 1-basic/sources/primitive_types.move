@@ -43,7 +43,7 @@ const EFALSE:u64 = 1;
         let result = (2 < 3);
         print(&result);
 
-        let comparison = string::utf8(b"----- Comparison (8 <= 3) expected true -----");
+        let comparison = string::utf8(b"----- Comparison (8 <= 3) expected false -----");
         print(&comparison);
         let result = (8 <= 3);
         print(&result);

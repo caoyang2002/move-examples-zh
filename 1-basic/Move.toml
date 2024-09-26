@@ -5,6 +5,7 @@ authors = []
 
 [addresses]
 base = '0x42'
+
 [dev-addresses]
 
 [dependencies.AptosFramework]

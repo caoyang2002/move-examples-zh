@@ -22,3 +22,5 @@ Cargo.lock
 build
 
 .DS_Store
+
+.vscode
