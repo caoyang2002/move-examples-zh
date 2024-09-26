@@ -24,9 +24,9 @@ aptos move publish
 
 ## 交互
 
-打开区块链浏览器
-选择 `set_number` 设置数字 `8`, `16`, `32`, `64`, `128`, `256`, `[ 2, 3, 4, 5 ]`
-选择 `get_number` 在 `address` 处输入账户地址，将显示该账户下被设置的数
+1. 打开区块链浏览器，找到部署该合约的账户，找到 module
+2. 选择 `set_number` 设置数字 `8`, `16`, `32`, `64`, `128`, `256`, `[ 2, 3, 4, 5 ]`
+3. 选择 `get_number` 在 `address` 处输入账户地址，将显示该账户下被设置的数
 
 
 # 详解
@@ -51,6 +51,9 @@ aptos move publish
     - `acquires NumberHolder`：表示这个函数将获得 `NumberHolder` 资源的控制权。
     - `if (!exists<NumberHolder>(account_addr))`：如果 `NumberHolder` 在指定的地址上不存在，则创建一个新的实例并将其移动到该地址。
     - `else`：如果 `NumberHolder` 已存在，则借用它并更新其字段的值。
+
+## 语法精讲
+
 
 ## 中文注释
 
